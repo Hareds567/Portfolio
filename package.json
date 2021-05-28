@@ -18,6 +18,7 @@
 		"react-dom": "^17.0.2",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "4.0.3",
+		"three": "^0.129.0",
 		"typescript": "^4.2.4"
 	},
 	"scripts": {
@@ -47,6 +48,7 @@
 	"devDependencies": {
 		"@types/dat.gui": "^0.7.6",
 		"@types/react-router-dom": "^5.1.7",
+		"@types/three": "^0.128.0",
 		"dat.gui": "^0.7.7"
 	}
 }
