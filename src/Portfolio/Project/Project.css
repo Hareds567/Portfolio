@@ -1,0 +1,19 @@
+.project-container {
+	position: relative;
+	border: 1px solid red;
+	margin: 5em 0;
+}
+.project-container:hover {
+	opacity: 0.5;
+}
+.project-icons {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 2em;
+	padding: 0.5em;
+	width: 100%;
+	height: fit-content;
+	min-height: 5cm;
+	border: 1px solid purple;
+}

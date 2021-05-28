@@ -1,0 +1,29 @@
+:root {
+	--iconWidth: 100px;
+}
+.icon-container {
+	position: relative;
+	border: 1px solid red;
+	border-radius: 50%;
+	width: var(--iconWidth);
+	height: var(--iconWidth);
+	transition: transform 500ms ease;
+}
+.icon-container span {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.icon-container:hover {
+	cursor: pointer;
+	opacity: 0.5;
+}
+/* .icon-container:active {
+	transform: scale(1.2);
+} */
+/* .icon-container: {
+	transform: scale(1.1);
+} */

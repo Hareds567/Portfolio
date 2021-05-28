@@ -1,0 +1,36 @@
+.header {
+	display: inline-flex;
+	position: sticky;
+	width: 100%;
+	color: white;
+	top: 1em;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+	overflow: block;
+	margin: 0;
+	padding: 0 3%;
+}
+.home-page {
+	display: inline-block;
+}
+.home-page a {
+	color: white;
+}
+.home-page:hover {
+	cursor: pointer;
+}
+.navigation ul {
+	list-style-type: none;
+	direction: row;
+}
+.navigation ul li {
+	display: inline-block;
+	list-style-type: none;
+	padding: 1em;
+	direction: row;
+}
+.navigation ul li:hover {
+	opacity: 0.5;
+	cursor: pointer;
+}
