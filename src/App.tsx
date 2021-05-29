@@ -98,7 +98,7 @@ const App = () => {
 	const xMesh = new THREE.Mesh(xGeometry, xMaterial);
 	xMesh.rotation.x = 30;
 	xMesh.position.set(0, -2, 1);
-	scene.add(xMesh);
+	//scene.add(xMesh);
 	//gui.current.add(xMesh.rotation, "x").min(0).max(200);
 
 	const tick = () => {

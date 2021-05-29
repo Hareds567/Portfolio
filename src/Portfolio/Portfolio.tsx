@@ -17,7 +17,6 @@ type project = {
 	keyName: string;
 };
 const Portfolio = () => {
-	const [activeDiv, set_activeDiv] = useState<HTMLDivElement>();
 	const projects: project[] = [
 		{
 			title: "Aisles",
@@ -39,6 +38,9 @@ const Portfolio = () => {
 			keyName: "Bars At Oswego",
 		},
 	];
+
+	const [activeProject, set_activeProject] = useState(projects[0].title);
+
 	return (
 		<div className='portfolio-container'>
 			<div className='project-icons'>
@@ -47,21 +49,25 @@ const Portfolio = () => {
 						<Icons
 							key={project.keyName}
 							title={project.keyName}
-							activeDiv={activeDiv}
-							set_activeDiv={set_activeDiv}
+							activeProject={activeProject}
+							set_activeProject={set_activeProject}
 						/>
 					);
 				})}
 			</div>
 			{projects.map((project) => {
-				return (
-					<Project
-						key={project.title}
-						title={project.title}
-						description={project.description}
-						github={project.github}
-					/>
-				);
+				if (activeProject === project.keyName) {
+					console.log(`TRUE: ${project.title}`);
+					return (
+						<Project
+							key={project.title}
+							title={project.title}
+							description={project.description}
+							github={project.github}
+							activeProject={activeProject}
+						/>
+					);
+				}
 			})}
 		</div>
 	);

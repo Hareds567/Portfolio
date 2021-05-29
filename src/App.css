@@ -3,11 +3,13 @@
 *::after {
 	box-sizing: border-box;
 }
+
 body {
 	background: #161b22;
 	position: relative;
 	margin: 0;
 	color: white;
+	overflow: hidden;
 }
 
 .App {

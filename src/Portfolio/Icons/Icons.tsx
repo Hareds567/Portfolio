@@ -5,30 +5,44 @@ import React, { useRef, SetStateAction, Dispatch, useEffect } from "react";
 import "./Icons.css";
 type props = {
 	title: string;
-	activeDiv: HTMLDivElement | undefined;
-	set_activeDiv: Dispatch<SetStateAction<HTMLDivElement | undefined>>;
+	activeProject: string;
+	set_activeProject: Dispatch<SetStateAction<string>>;
 };
-const Icons: React.FC<props> = ({ title, activeDiv, set_activeDiv }) => {
+const Icons: React.FC<props> = ({
+	title,
+	activeProject,
+	set_activeProject,
+}) => {
 	const icon_container = useRef<HTMLDivElement>(null);
-	const test = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+
+	const onClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 		if (!icon_container.current) return;
-		if (icon_container.current === activeDiv) return;
-		set_activeDiv(icon_container.current);
-		icon_container.current.style.transform = "scale(1.2)";
+		if (title === activeProject) return;
+		set_activeProject(title);
+		icon_container.current.style.transform = "scale(1.25)";
+		icon_container.current.style.opacity = "0.5";
 	};
 
 	useEffect(() => {
 		if (!icon_container.current) return;
-		if (activeDiv !== icon_container.current) {
+		if (title !== activeProject) {
 			icon_container.current.style.transform = "scale(1)";
+			icon_container.current.style.opacity = "1";
 		}
 	});
+	useEffect(() => {
+		if (!icon_container.current) return;
+		if (title === activeProject) {
+			icon_container.current.style.transform = "scale(1.25)";
+			icon_container.current.style.opacity = "0.5";
+		}
+	}, []);
 
 	return (
 		<div
 			className='icon-container'
 			ref={icon_container}
-			onClick={(event) => test(event)}>
+			onClick={(event) => onClick(event)}>
 			<span>{title}</span>
 		</div>
 	);

@@ -26,6 +26,7 @@ const Header = () => {
 							<NavLink
 								key={element.name}
 								to={element.path}
+								activeStyle={{ fontWeight: "bold", opacity: "0.5" }}
 								style={{ color: "white" }}>
 								<li>{element.name}</li>
 							</NavLink>
