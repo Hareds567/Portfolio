@@ -1,11 +1,31 @@
 .project-container {
 	position: relative;
-	border: 1px solid red;
+	/* outline: 1px solid red; */
 	margin: 5em 0;
 }
-.project-container:hover {
-	opacity: 0.5;
+.project-container article {
+	/* outline: 1px solid green; */
+	font-size: 30px;
+	letter-spacing: 1px;
+	line-height: 2.5rem;
+	margin: 6rem;
+
+	align-content: center;
 }
+.project-container article p {
+	margin-left: auto;
+	margin-right: auto;
+	/* outline: 1px solid red; */
+	max-width: 90ch;
+}
+.project-container h1 {
+	font-size: 4.5rem;
+	overflow-wrap: break-word;
+}
+.project-container header {
+	text-align: center;
+}
+
 .project-icons {
 	position: relative;
 	display: flex;
@@ -17,6 +37,7 @@
 	min-height: 5cm;
 	/* border-bottom: 2ch solid white; */
 }
+
 .project-icons::after {
 	content: "";
 	position: absolute;

@@ -3,13 +3,14 @@
 	position: sticky;
 	width: 100%;
 	color: white;
-	top: 1em;
+	top: 0em;
 	justify-content: space-between;
 	align-items: center;
 	z-index: 100;
 	overflow: block;
 	margin: 0;
-	padding: 0 3%;
+	padding: 1em 3%;
+	background: var(--primary-color);
 }
 .home-page {
 	display: inline-block;

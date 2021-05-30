@@ -8,7 +8,7 @@
 	border-radius: 50%;
 	width: var(--iconWidth);
 	height: var(--iconWidth);
-	transition: transform 500ms ease;
+	transition: transform 1s ease;
 }
 .icon-container span {
 	position: absolute;

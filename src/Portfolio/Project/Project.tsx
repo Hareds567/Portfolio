@@ -20,8 +20,14 @@ const Project: React.FC<Props> = ({ ...props }) => {
 			<header>
 				<h1>{props.title}</h1>
 			</header>
-			<article>{props.description}</article>
-			{props.github && <FontAwesomeIcon icon={faGithub} size='3x' />}
+			<article>
+				<p>{props.description}</p>
+			</article>
+			<footer>
+				<a href='https://github.com/CSC480-21S' target='_blank'>
+					{props.github && <FontAwesomeIcon icon={faGithub} size='3x' />}
+				</a>
+			</footer>
 		</div>
 	);
 };
