@@ -2,13 +2,13 @@
 	display: inline-flex;
 	position: sticky;
 	width: 100%;
-	color: white;
 	top: 0em;
 	justify-content: space-between;
 	align-items: center;
 	z-index: 100;
 	overflow: block;
 	margin: 0;
+
 	padding: 1em 3%;
 	background: var(--primary-color);
 }
@@ -16,7 +16,8 @@
 	display: inline-block;
 }
 .home-page a {
-	color: white;
+	color: rgb(95, 95, 95);
+	transition: color 0.5s ease;
 }
 .home-page:hover {
 	cursor: pointer;
@@ -32,6 +33,10 @@
 	direction: row;
 }
 .navigation ul li:hover {
-	opacity: 0.5;
+	opacity: 1;
 	cursor: pointer;
+}
+.navigation a {
+	color: rgb(95, 95, 95);
+	transition: color 0.5s ease;
 }

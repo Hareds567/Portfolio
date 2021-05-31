@@ -17,7 +17,9 @@ const Header = () => {
 	return (
 		<div className='header'>
 			<div className='home-page'>
-				<NavLink to='/'>Justin Cabrera</NavLink>
+				<NavLink exact activeStyle={{ color: "white" }} to='/'>
+					Justin Cabrera
+				</NavLink>
 			</div>
 			<div className='navigation'>
 				<ul>
@@ -26,8 +28,7 @@ const Header = () => {
 							<NavLink
 								key={element.name}
 								to={element.path}
-								activeStyle={{ opacity: "0.5" }}
-								style={{ color: "white" }}>
+								activeStyle={{ color: "white" }}>
 								<li>
 									<b>{element.name}</b>
 								</li>

@@ -54,20 +54,24 @@
 .project-icons::after {
 	position: absolute;
 	content: "";
-	width: 100%;
+	width: 0%;
 	height: 5px;
 	background-color: white;
 	left: 0;
 	bottom: 0;
 	animation-name: appearFromCenter;
+	animation-delay: 0.5s;
 	animation-duration: 3s;
+	animation-fill-mode: forwards;
 }
 
 @keyframes appearFromCenter {
 	0% {
+		width: 100%;
 		transform: scaleX(0);
 	}
 	100% {
+		width: 100%;
 		transform: scaleX(1);
 	}
 }

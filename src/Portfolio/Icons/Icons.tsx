@@ -1,4 +1,10 @@
-import React, { useRef, SetStateAction, Dispatch, useEffect } from "react";
+import React, {
+	useRef,
+	SetStateAction,
+	Dispatch,
+	useEffect,
+	useState,
+} from "react";
 //Reducer
 
 //Styles
@@ -14,44 +20,31 @@ const Icons: React.FC<props> = ({
 	set_activeProject,
 }) => {
 	const icon_container = useRef<HTMLDivElement>(null);
+	const [animation, setAnimation] = useState(10);
 
-	const onClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-		if (!icon_container.current) return;
-		if (title === activeProject) return;
+	const onClick = () => {
+		setAnimation(1);
 		set_activeProject(title);
-		icon_container.current.style.opacity = "0.85";
-		icon_container.current.style.transform = "scale(1.4)";
-		icon_container.current.style.color = "var(--primary-color)";
-		icon_container.current.style.background = "var(--secondary-color)";
 	};
-
 	useEffect(() => {
-		if (!icon_container.current) return;
-		if (title !== activeProject) {
-			icon_container.current.style.transitionDelay = "0s";
-			icon_container.current.style.transitionDuration = "1s";
-			icon_container.current.style.transform = "scale(1)";
-			icon_container.current.style.opacity = "1";
-			icon_container.current.style.background = "var(--primary-color)";
-			icon_container.current.style.color = "var(--secondary-color)";
+		if (activeProject !== title && (animation === 1 || animation === 2)) {
+			setAnimation(0);
 		}
 	});
-
 	useEffect(() => {
-		if (!icon_container.current) return;
-		if (title === activeProject) {
-			icon_container.current.style.transitionDelay = "3s";
-			icon_container.current.style.transitionDuration = "1s";
-			icon_container.current.style.opacity = "0.85";
-			icon_container.current.style.transform = "scale(1.4)";
+		if (activeProject === title) {
+			setAnimation(2);
 		}
 	}, []);
-
+	useEffect(() => {
+		console.log(animation);
+	}, [animation]);
 	return (
 		<div
 			className='icon-container'
 			ref={icon_container}
-			onClick={(event) => onClick(event)}>
+			onClick={onClick}
+			data-animation={animation}>
 			<span>
 				<h3>{title}</h3>
 			</span>
