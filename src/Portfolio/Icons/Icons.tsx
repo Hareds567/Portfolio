@@ -53,7 +53,7 @@ const Icons: React.FC<props> = ({
 			ref={icon_container}
 			onClick={(event) => onClick(event)}>
 			<span>
-				<b>{title}</b>
+				<h3>{title}</h3>
 			</span>
 		</div>
 	);

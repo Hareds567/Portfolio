@@ -1,22 +1,8 @@
 .project-container {
 	position: relative;
 	/* outline: 1px solid red; */
-	margin: 5em 0;
-}
-.project-container article {
-	/* outline: 1px solid green; */
-	font-size: 30px;
-	letter-spacing: 1px;
-	line-height: 2.5rem;
-	margin: 6rem;
-
-	align-content: center;
-}
-.project-container article p {
-	margin-left: auto;
-	margin-right: auto;
-	/* outline: 1px solid red; */
-	max-width: 90ch;
+	width: 100%;
+	padding: 5em 0;
 }
 .project-container h1 {
 	font-size: 4.5rem;
@@ -25,8 +11,37 @@
 .project-container header {
 	text-align: center;
 }
+.project-container article {
+	/* outline: 1px solid green; */
+	font-size: 30px;
+	letter-spacing: 1px;
+	line-height: 2.5rem;
+	min-width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+.project-container article p {
+	/* outline: 1px solid red; */
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 27ch;
+	max-width: 90ch;
+}
+.project-container section {
+	/* outline: 1px solid green; */
+	padding: 5rem 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+.project-container section a {
+	/* outline: 1px solid red; */
+
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .project-icons {
+	/* outline: 1px solid red; */
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -35,12 +50,10 @@
 	width: 100%;
 	height: fit-content;
 	min-height: 5cm;
-	/* border-bottom: 2ch solid white; */
 }
-
 .project-icons::after {
-	content: "";
 	position: absolute;
+	content: "";
 	width: 100%;
 	height: 5px;
 	background-color: white;

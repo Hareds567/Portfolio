@@ -23,11 +23,11 @@ const Project: React.FC<Props> = ({ ...props }) => {
 			<article>
 				<p>{props.description}</p>
 			</article>
-			<footer>
+			<section>
 				<a href='https://github.com/CSC480-21S' target='_blank'>
 					{props.github && <FontAwesomeIcon icon={faGithub} size='3x' />}
 				</a>
-			</footer>
+			</section>
 		</div>
 	);
 };
