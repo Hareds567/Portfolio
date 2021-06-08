@@ -12,32 +12,19 @@ import "./ContactMe.css";
 
 const ContactMe = () => {
 	const platform_clipboard = React.useRef<HTMLDivElement>(null);
-	const [isCopied, set_isCopied] = React.useState(false);
+	const [isCopied, set_isCopied] = React.useState("off");
 
 	const copy_to_clipboard = () => {
 		copy("justincabrera854@gmail.com");
-		set_hoverDetailsDisplay("block");
-		set_isCopied(true);
+		set_isCopied("on");
 		setTimeout(() => {
-			set_hoverDetailsDisplay("none");
-			set_isCopied(false);
-		}, 5000);
+			set_isCopied("off");
+		}, 7000);
 	};
-	const set_hoverDetailsDisplay = (display: string) => {
-		if (platform_clipboard.current === null) return;
-		if (display === "none")
-			platform_clipboard.current.style.removeProperty(display);
-		platform_clipboard.current.style.display = display;
-	};
+
 	const goTo = (link: string) => {
 		window.open(link);
 	};
-
-	React.useEffect(() => {
-		platform_clipboard.current?.addEventListener("mouseover", (e) => {
-			console.log(platform_clipboard.current?.style.display);
-		});
-	});
 
 	return (
 		<div className='contact-container'>
@@ -72,7 +59,10 @@ const ContactMe = () => {
 					</div>
 				</li>
 				<li className='gmail' id='gmail'>
-					<div className='platform-data' onClick={copy_to_clipboard}>
+					<div
+						className='platform-data'
+						id='platform-data'
+						onClick={copy_to_clipboard}>
 						<FontAwesomeIcon
 							icon={faEnvelope}
 							size='2x'
@@ -82,10 +72,12 @@ const ContactMe = () => {
 					</div>
 					<div
 						className={
-							!isCopied ? "platform-clipboard-off" : "platform-clipboard-on"
+							isCopied === "off"
+								? "platform-clipboard-off"
+								: "platform-clipboard-on"
 						}
 						ref={platform_clipboard}>
-						{!isCopied ? "Copy to Clipboard" : "Copied to clipboard"}
+						{isCopied === "off" ? "Copy to Clipboard" : "Copied to Clipboard"}
 					</div>
 				</li>
 			</ul>

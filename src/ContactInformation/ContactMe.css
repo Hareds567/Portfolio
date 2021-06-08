@@ -43,11 +43,13 @@
 	color: var(--primary-color);
 	padding: 0.5em 0.5em;
 	position: absolute;
-	display: none;
+	display: block;
 	right: -150px;
 	top: 50%;
 	transform: translateY(-50%);
+	opacity: 0.75;
 }
+
 .platform-clipboard-off {
 	opacity: 0.75;
 	padding: 0.5em 0.5em;
@@ -58,8 +60,5 @@
 	transform: translateY(-50%);
 }
 .platform-data:hover + .platform-clipboard-off {
-	display: block;
-}
-.platform-data:hover + .platform-clipboard-on {
 	display: block;
 }
