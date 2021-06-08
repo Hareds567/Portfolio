@@ -4,7 +4,7 @@
 .icon-container {
 	position: relative;
 	border: 1px solid white;
-
+	opacity: 0.5;
 	border-radius: 50%;
 	width: var(--iconWidth);
 	height: var(--iconWidth);
@@ -22,9 +22,56 @@
 	cursor: pointer;
 	opacity: 0.5;
 }
-/* .icon-container:active {
-	transform: scale(1.2);
-} */
-/* .icon-container: {
-	transform: scale(1.1);
-} */
+
+/* On Deselect Animation */
+.icon-container[data-animation="0"] {
+	animation-name: iconAnimation1;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+@keyframes iconAnimation1 {
+	0% {
+		transform: scale(1.4);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0.5;
+	}
+}
+
+/* On Select Animation */
+.icon-container[data-animation="1"] {
+	animation-name: iconAnimation2;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+}
+@keyframes iconAnimation2 {
+	0% {
+		transform: scale(1);
+		opacity: 0.5;
+	}
+	100% {
+		transform: scale(1.4);
+		opacity: 1;
+	}
+}
+
+/* On Start Animation */
+.icon-container[data-animation="2"] {
+	animation-name: iconAnimation3;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+@keyframes iconAnimation3 {
+	0% {
+		transform: scale(1);
+		opacity: 0.5;
+		pointer-events: none;
+	}
+	100% {
+		transform: scale(1.4);
+		opacity: 1;
+		pointer-events: auto;
+	}
+}

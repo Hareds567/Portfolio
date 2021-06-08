@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 //Local Components
 import Header from "./Header/Header";
 import Portfolio from "./Portfolio/Portfolio";
+import ContactMe from "./ContactInformation/ContactMe";
 //Textures
 import rockImage from "./Textures/rockTexture.jpg";
 import rockHeightImage from "./Textures/height.png";
@@ -144,7 +145,9 @@ const App = () => {
 
 	const particleAnimation = () => {
 		const elapsedTime = clock.getElapsedTime();
-		particle.rotation.y = elapsedTime * mouseX * 0.00003;
+		particle.rotation.y = elapsedTime * 0.003;
+		// particle.rotation.x = elapsedTime * 0.003;
+		particle.rotation.z = elapsedTime * 0.003;
 		requestAnimationFrame(particleAnimation);
 	};
 	particleAnimation();
@@ -207,6 +210,7 @@ const App = () => {
 				</Route>
 				<Route exact path='/Contact-Information'>
 					<Header />
+					<ContactMe />
 				</Route>
 			</Switch>
 		</Router>

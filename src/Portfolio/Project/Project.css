@@ -1,6 +1,6 @@
 .project-container {
-	position: relative;
 	/* outline: 1px solid red; */
+	position: relative;
 	width: 100%;
 	padding: 5em 0;
 }
@@ -24,7 +24,6 @@
 	/* outline: 1px solid red; */
 	margin-left: auto;
 	margin-right: auto;
-	min-width: 27ch;
 	max-width: 90ch;
 }
 .project-container section {
@@ -35,9 +34,12 @@
 }
 .project-container section a {
 	/* outline: 1px solid red; */
-
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.project-container {
+	animation: project-container-animation;
 }
 
 .project-icons {
@@ -51,6 +53,7 @@
 	height: fit-content;
 	min-height: 5cm;
 }
+
 .project-icons::after {
 	position: absolute;
 	content: "";
