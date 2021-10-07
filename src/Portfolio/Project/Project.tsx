@@ -14,19 +14,21 @@ type Props = {
 const Project: React.FC<Props> = ({ ...props }) => {
 	return (
 		<div className='project-container'>
-			<header>
-				<h1>{props.project.title}</h1>
-			</header>
-			<article>
-				<p>{props.project.description}</p>
-			</article>
-			<section>
-				<a href='https://github.com/CSC480-21S' target='_blank'>
-					{props.project.github1 && (
-						<FontAwesomeIcon icon={faGithub} size='3x' />
-					)}
-				</a>
-			</section>
+			<div>
+				<header>
+					<h1>{props.project.title}</h1>
+				</header>
+				<article>
+					<p>{props.project.description}</p>
+				</article>
+				<section>
+					<a href='https://github.com/CSC480-21S' target='_blank'>
+						{props.project.github1 && (
+							<FontAwesomeIcon icon={faGithub} size='3x' />
+						)}
+					</a>
+				</section>
+			</div>
 		</div>
 	);
 };

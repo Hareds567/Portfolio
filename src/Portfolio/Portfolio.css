@@ -1,4 +1,14 @@
 .portfolio-container {
 	position: relative;
-	padding: 3em 3em;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	padding: 5em 2%;
+	/* padding-top: 3em;
+	padding-left: 2%;
+	padding-right: 2%; */
+	border-top: 42px solid var(--primary-color);
+	/* border-bottom: 42px solid var(--primary-color); */
+	/* outline: solid 1px red; */
 }

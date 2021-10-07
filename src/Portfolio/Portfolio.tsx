@@ -14,20 +14,21 @@ const Portfolio = () => {
 		{
 			title: "Aisles",
 			description:
-				"Developed a web application in collaboration with IBM Inc. The project aimed to guide customers around the Price Chopper grocery store by using textual directions that indicate the fastest route towards the next item in an individual’s grocery list. Five teams worked with the guidance of IBM to build an application with a microservice architecture and Agile development. Personally, my main role in the project was to build the frontend of the application. But, part of my time went to working with the engine, usability, and quality analysis teams to revise the user interface, test the endpoints, and work with the deployment of the application.",
+				"A web application developed in collaboration with IBM Inc. The project aimed to guide customers around Price Chopper Grocery Store by using textual directions that indicate the fastest route towards the next item in an individual’s grocery list. I participated in the development of the front-end using React and frameworks such as Redux, Material UI, and more. Other tasks included working with other teammates to test and further improve various endpoints of the different microservices.",
 			github1: "https://github.com/CSC480-21S",
 			keyName: "Aisles",
 		},
 		{
 			title: "SUNY Oswego COVID-Tracker",
-			description: "",
+			description:
+				"An android application whose goal is to alert Students, Faculty, and Staff who have been in contact with individuals who contracted COVID-19. I worked on the development of the graphic interface and a server-side rendered web app with EJS. Further work includes managing a MongoDB database and sections of the backend.",
 			github1:
 				"https://github.com/Hareds567/Covid-19-Symptom-Tracker-and-Tracer-Android-Application",
 			keyName: "COVID Tracker",
 		},
 		{
 			title: "Bars at Oswego",
-			description: "",
+			description: "5",
 			github1: "https://github.com/Hareds567/bars-at-oswego",
 			keyName: "Bars At Oswego",
 		},
@@ -36,7 +37,7 @@ const Portfolio = () => {
 	const [activeProject, set_activeProject] = useState(projects[0].title);
 
 	return (
-		<div className='portfolio-container'>
+		<div className='portfolio-container' id='portfolio'>
 			<div className='project-icons'>
 				{projects.map((project) => {
 					return (
@@ -49,11 +50,13 @@ const Portfolio = () => {
 					);
 				})}
 			</div>
-			{projects.map((project) => {
-				if (activeProject === project.keyName) {
-					return <Project project={project} activeProject={activeProject} />;
-				}
-			})}
+			<div>
+				{projects.map((project) => {
+					if (activeProject === project.keyName) {
+						return <Project project={project} activeProject={activeProject} />;
+					}
+				})}
+			</div>
 		</div>
 	);
 };

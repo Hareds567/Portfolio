@@ -2,36 +2,45 @@
 	/* outline: 1px solid red; */
 	position: relative;
 	width: 100%;
-	padding: 5em 0;
+	padding: 5em 15ch;
 }
+
 .project-container h1 {
 	font-size: 4.5rem;
 	overflow-wrap: break-word;
 }
+
 .project-container header {
 	text-align: center;
 }
+
 .project-container article {
 	/* outline: 1px solid green; */
 	font-size: 30px;
 	letter-spacing: 1px;
-	line-height: 2.5rem;
 	min-width: fit-content;
 	margin-left: auto;
 	margin-right: auto;
+	line-height: 3ex;
+	height: 37.5ex;
+	/* 2.5ex for each visible line */
+	overflow: hidden;
 }
+
 .project-container article p {
 	/* outline: 1px solid red; */
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 90ch;
 }
+
 .project-container section {
 	/* outline: 1px solid green; */
 	padding: 5rem 0;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .project-container section a {
 	/* outline: 1px solid red; */
 	margin-left: auto;
@@ -40,41 +49,4 @@
 
 .project-container {
 	animation: project-container-animation;
-}
-
-.project-icons {
-	/* outline: 1px solid red; */
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-	gap: 2em;
-	width: 100%;
-	height: fit-content;
-	min-height: 5cm;
-}
-
-.project-icons::after {
-	position: absolute;
-	content: "";
-	width: 0%;
-	height: 5px;
-	background-color: white;
-	left: 0;
-	bottom: 0;
-	animation-name: appearFromCenter;
-	animation-delay: 0.5s;
-	animation-duration: 3s;
-	animation-fill-mode: forwards;
-}
-
-@keyframes appearFromCenter {
-	0% {
-		width: 100%;
-		transform: scaleX(0);
-	}
-	100% {
-		width: 100%;
-		transform: scaleX(1);
-	}
 }

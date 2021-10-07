@@ -27,7 +27,7 @@ const ContactMe = () => {
 	};
 
 	return (
-		<div className='contact-container'>
+		<div className='contact-container' id='contact-info'>
 			<header>
 				<h1>You can find me in the following platforms</h1>
 			</header>

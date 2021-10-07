@@ -1,42 +1,34 @@
 .header {
-	display: inline-flex;
-	position: sticky;
-	width: 100%;
-	top: 0em;
-	justify-content: space-between;
-	align-items: center;
-	z-index: 100;
-	overflow: block;
+	position: fixed;
+	width: fit-content;
+	top: 2%;
+	right: 2%;
 	margin: 0;
-
-	padding: 1em 3%;
+	padding: 1em 1%;
+	z-index: 101;
 	background: var(--primary-color);
+	mix-blend-mode: inherit;
+	opacity: 0;
+	animation: appear-from-top 4s 10s forwards;
+	/* outline: red solid 1px; */
 }
-.home-page {
-	display: inline-block;
-}
-.home-page a {
-	color: rgb(95, 95, 95);
-	transition: color 0.5s ease;
-}
-.home-page:hover {
-	cursor: pointer;
-}
-.navigation ul {
-	list-style-type: none;
-	direction: row;
-}
-.navigation ul li {
-	display: inline-block;
-	list-style-type: none;
-	padding: 1em;
-	direction: row;
-}
-.navigation ul li:hover {
-	opacity: 1;
-	cursor: pointer;
-}
+
 .navigation a {
-	color: rgb(95, 95, 95);
-	transition: color 0.5s ease;
+	display: inline-block;
+	mix-blend-mode: inherit;
+	color: var(--secondary-color);
+	padding: 9px 16px;
+	z-index: 100;
+	mix-blend-mode: inherit;
+}
+
+.navigation a:hover {
+	color: tan;
+	cursor: pointer;
+}
+
+@keyframes appear-from-top {
+	to {
+		opacity: 1;
+	}
 }

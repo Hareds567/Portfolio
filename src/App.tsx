@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import * as THREE from "three";
 import * as dat from "dat.gui";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import Header from "./Header/Header";
 import Portfolio from "./Portfolio/Portfolio";
 import ContactMe from "./ContactInformation/ContactMe";
+import About from "./About/About";
 //Textures
 import rockImage from "./Textures/rockTexture.jpg";
 import rockHeightImage from "./Textures/height.png";
@@ -158,7 +159,7 @@ const App = () => {
 	firstLight.position.set(-9.5, 3, 4);
 	scene.add(firstLight);
 	const firstLightHelper = new THREE.PointLightHelper(firstLight);
-	scene.add(firstLightHelper);
+	//scene.add(firstLightHelper);
 
 	//const color = { color: "#00ff00" };
 	// gui.current.addColor(color, "color").onChange(() => {
@@ -194,26 +195,36 @@ const App = () => {
 	});
 	//Initialize the Renderer
 
+	const [body_isVisible, set_body_isVisible] = useState(false);
+
+	useEffect(() => {
+		setTimeout(() => {
+			set_body_isVisible(true);
+		}, 11000);
+	}, []);
 	return (
-		<Router>
-			<Switch>
-				<Route exact path='/'>
-					<Header />
-					<div className='App' ref={appDiv} />
-				</Route>
-				<Route exact path='/Portfolio'>
-					<Header />
+		<>
+			{/* {header_isVisible ? <Header /> : <></>} */}
+			<Header />
+			{/* <Header /> */}
+			<div className='App' ref={appDiv}>
+				{/* <Header /> */}
+				<div className='Welcome-message'>
+					<h1>Hello, My name is Justin.</h1>
+					<p>Welcome to my website!</p>
+				</div>
+			</div>
+			{body_isVisible ? (
+				<>
+					{" "}
 					<Portfolio />
-				</Route>
-				<Route exact path='/About'>
-					<Header />
-				</Route>
-				<Route exact path='/Contact-Information'>
-					<Header />
-					<ContactMe />
-				</Route>
-			</Switch>
-		</Router>
+					<About />
+					<ContactMe />{" "}
+				</>
+			) : (
+				<></>
+			)}
+		</>
 	);
 };
 

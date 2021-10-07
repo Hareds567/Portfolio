@@ -1,15 +1,57 @@
 :root {
 	--iconWidth: 100px;
+	--third-color: tan
 }
+
+.project-icons {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5em;
+	width: 90%;
+	height: fit-content;
+	min-height: 5cm;
+	margin: 0 15px;
+	/* outline: solid 1px gray; */
+}
+
+.project-icons::after {
+	position: absolute;
+	content: "";
+	width: 0%;
+	height: 5px;
+	background-color: var(--third-color);
+	left: 0;
+	bottom: 0;
+	animation-name: appearFromCenter;
+	animation-delay: 0.5s;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes appearFromCenter {
+	0% {
+		width: 100%;
+		transform: scaleX(0);
+	}
+	100% {
+		width: 100%;
+		transform: scaleX(1);
+	}
+}
+
 .icon-container {
 	position: relative;
-	border: 1px solid white;
+	border: 1px solid var(--secondary-color);
 	opacity: 0.5;
 	border-radius: 50%;
 	width: var(--iconWidth);
 	height: var(--iconWidth);
 	transition: transform 1s ease;
+	/* outline: solid 1px tomato; */
 }
+
 .icon-container span {
 	position: absolute;
 	width: 100%;
@@ -18,60 +60,73 @@
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
+
 .icon-container:hover {
 	cursor: pointer;
-	opacity: 0.5;
+}
+
+/* On Deselected Circle hover */
+
+.icon-container:hover[data-animation='0'] {
+	cursor: pointer;
+	animation: deselected-hover 1s forwards !important;
+}
+
+@keyframes deselected-hover {
+	to {
+		opacity: 1;
+		color: white;
+	}
 }
 
 /* On Deselect Animation */
+
 .icon-container[data-animation="0"] {
 	animation-name: iconAnimation1;
-	animation-duration: 3s;
+	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
 }
+
 @keyframes iconAnimation1 {
-	0% {
-		transform: scale(1.4);
-		opacity: 1;
-	}
-	100% {
+	to {
 		transform: scale(1);
+		color: var(--secondary-color);
+		border-color: var(--secondary-color);
 		opacity: 0.5;
 	}
 }
 
 /* On Select Animation */
+
 .icon-container[data-animation="1"] {
 	animation-name: iconAnimation2;
 	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
 }
+
 @keyframes iconAnimation2 {
-	0% {
-		transform: scale(1);
-		opacity: 0.5;
-	}
-	100% {
+	to {
 		transform: scale(1.4);
+		color: var(--third-color);
+		border-color: var(--third-color);
 		opacity: 1;
 	}
 }
 
 /* On Start Animation */
+
 .icon-container[data-animation="2"] {
 	animation-name: iconAnimation3;
 	animation-duration: 3s;
 	animation-fill-mode: forwards;
 }
+
 @keyframes iconAnimation3 {
-	0% {
-		transform: scale(1);
-		opacity: 0.5;
-		pointer-events: none;
-	}
-	100% {
+	to {
 		transform: scale(1.4);
 		opacity: 1;
+		color: var(--third-color);
+		border-color: var(--third-color);
 		pointer-events: auto;
 	}
 }
