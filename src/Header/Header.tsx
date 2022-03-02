@@ -3,52 +3,49 @@ import { Link, NavLink } from "react-router-dom";
 //Styles
 import "./Header.css";
 type Navigation = {
-	name: string;
-	path: string;
-	id: string;
+  name: string;
+  path: string;
+  id: string;
 };
 
 const Header = () => {
-	const nav: Navigation[] = [
-		{ name: "Portfolio", path: "/Portfolio", id: "portfolio" },
-		{ name: "About", path: "/About", id: "about" },
-		{
-			name: "Contact Me",
-			path: "/Contact-Information",
-			id: "contact-info",
-		},
-	];
-	const [header_isVisible, set_header_isVisible] = useState(false);
-	const test = useRef(window.location.href);
+  const nav: Navigation[] = [
+    { name: "Work", path: "/Portfolio", id: "portfolio" },
+    { name: "About", path: "/About", id: "about" },
 
-	useEffect(() => {
-		setTimeout(() => {
-			set_header_isVisible(true);
-		}, 10000);
-	}, []);
+    {
+      name: "Contact",
+      path: "/Contact-Information",
+      id: "contact-info",
+    },
+  ];
+  const [header_isVisible, set_header_isVisible] = useState(true);
 
-	useEffect(() => {
-		test.current = window.location.href;
-	});
-	useEffect(() => console.log(test.current, [test.current]));
+  //On load Header Timeout
+  useEffect(() => {
+    setTimeout(() => {
+      set_header_isVisible(true);
+    }, 10000);
+  }, []);
 
-	return (
-		<div
-			className='header'
-			style={
-				header_isVisible ? { visibility: "visible" } : { visibility: "hidden" }
-			}>
-			<div className='navigation'>
-				{nav.map((element) => {
-					return (
-						<a href={`#${element.id}`}>
-							<b>{element.name}</b>
-						</a>
-					);
-				})}
-			</div>
-		</div>
-	);
+  return (
+    <div
+      className="header"
+      style={
+        header_isVisible ? { visibility: "visible" } : { visibility: "hidden" }
+      }
+    >
+      <div className="navigation">
+        {nav.map((element) => {
+          return (
+            <a>
+              <b>{element.name}</b>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default Header;
