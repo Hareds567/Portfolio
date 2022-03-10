@@ -1,0 +1,68 @@
+.homepage-container-2 {
+  --laptopScreenWidth: 920px;
+  position: relative;
+  display: flex;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  max-width: 100%;
+  height: 110vh;
+}
+
+.homepage-information-container2 {
+  position: relative;
+  width: 35ch;
+  color: var(--secondary-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  /* outline: 1px solid blue; */
+  height: 100%;
+  width: 100%;
+}
+.homepage-information-container2 p h2 {
+  font-size: 2vw;
+}
+.homepage-information-activeGoals {
+  max-width: 25ch;
+}
+/* ======================================================================= */
+/* Laptop */
+
+.laptop-screen {
+  position: absolute;
+  width: 920px;
+  height: 610px;
+  background: var(--primary-color);
+  left: 50%;
+  transform: translate(-50%, 60%);
+  border-radius: 6px;
+  border-style: solid;
+  border-color: black;
+  border-width: 24px 24px 70px;
+}
+
+.laptop-screen:after {
+  content: "";
+  position: absolute;
+  width: calc(var(--laptopScreenWidth) * 1.12);
+  height: 50px;
+  left: calc(
+    var(--laptopScreenWidth) - (var(--laptopScreenWidth) * 1.12) + 24px
+  );
+  bottom: -70px;
+  background: black;
+  border-top: 0.2px solid white;
+  border-radius: 6px 6px 20px 20px;
+}
+.first-screen {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first-screen h1:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: transform 0.5s ease;
+}

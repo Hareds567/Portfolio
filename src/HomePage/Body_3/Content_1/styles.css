@@ -1,0 +1,44 @@
+.laptop-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.laptop-menu li {
+  cursor: pointer;
+  display: inline-block;
+  list-style-type: none;
+  padding: 1rem;
+  margin: 0 0.5rem;
+  user-select: none;
+}
+
+.laptop-menu li:hover {
+}
+
+.isActive {
+  opacity: 0.75;
+  background: #696969;
+}
+.content1-main-container {
+  display: grid;
+  grid-template-areas: "menu" "content";
+  grid-template-rows: 75px auto;
+  height: 100%;
+  width: 100%;
+}
+.laptop-menu {
+  position: relative;
+  grid-area: menu;
+}
+
+.laptop-content {
+  grid-area: content;
+}
+
+.previous {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}

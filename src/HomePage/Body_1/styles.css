@@ -1,0 +1,98 @@
+.homepage-container1 {
+  position: relative;
+  z-index: 100;
+}
+.Welcome-message {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Welcome-message p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(5rem);
+  animation: fadeIn 2s calc(var(--typeSpeed) + 3s) ease forwards;
+}
+.Welcome-message h1 {
+  position: relative;
+  font-family: monospace;
+  font-size: clamp(1rem, 3vw + 1rem, 3rem);
+}
+
+.Welcome-message h1::after,
+.Welcome-message h1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Welcome-message h1::before {
+  content: "";
+  animation: typeWriter var(--typeSpeed) 1.5s steps(24) forwards;
+  background: var(--primary-color);
+  mix-blend-mode: inherit;
+}
+
+.Welcome-message h1::after {
+  width: 0.12em;
+  background: var(--secondary-color);
+  animation: typeWriter var(--typeSpeed) 1.5s steps(24) forwards,
+    blinkAnimation 850ms steps(24) infinite;
+}
+
+/* Styles after first Render */
+
+.Welcome-message-wasRendered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Welcome-message-wasRendered p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 1;
+}
+.Welcome-message-wasRendered h1 {
+  position: relative;
+  font-family: monospace;
+  font-size: clamp(1rem, 3vw + 1rem, 3rem);
+}
+
+.Welcome-message-wasRendered h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+
+  width: 0.12em;
+  background: var(--secondary-color);
+  animation: blinkAnimation 850ms steps(24) infinite;
+}
+
+@keyframes typeWriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blinkAnimation {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
