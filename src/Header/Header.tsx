@@ -22,17 +22,15 @@ const Header = () => {
   ];
   //check local storage
   const checkLocalStorage = () => {
-    console.log(
-      `From header: ${window.localStorage.getItem("homePageIsRendered")}`
-    );
     if (window.localStorage.getItem("homePageIsRendered")) return true;
     return false;
   };
+
   const [header_isVisible, set_header_isVisible] = useState(false);
   const [current, set_current] = useState<Navigation>();
   const [isAnimated, set_isAnimated] = useState<boolean>(checkLocalStorage());
 
-  //On load Header Timeout
+  //Onload Header Timeout
   useEffect(() => {
     set_current(nav[0]);
     if (checkLocalStorage()) {

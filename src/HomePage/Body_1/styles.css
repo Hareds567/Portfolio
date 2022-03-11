@@ -1,5 +1,6 @@
 .homepage-container1 {
   position: relative;
+  overflow: hidden;
   z-index: 100;
 }
 .Welcome-message {

@@ -12,9 +12,6 @@
   user-select: none;
 }
 
-.laptop-menu li:hover {
-}
-
 .isActive {
   opacity: 0.75;
   background: #696969;
