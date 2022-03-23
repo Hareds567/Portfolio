@@ -1,0 +1,27 @@
+.about-project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  height: 55vh;
+}
+.about-project > h3 {
+  font-family: "Sansita";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20x;
+  line-height: 22px;
+  text-decoration: underline;
+}
+.about-project > .container {
+  position: relative;
+  outline: 1px solid red;
+  height: 50vh;
+  display: grid;
+  width: 1000px;
+  grid-template:
+    "involves plannings"
+    "deadline budget"
+    "more more";
+  grid-template-columns: 50% auto;
+}

@@ -1,0 +1,75 @@
+.project-involves-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-area: involves;
+}
+.project-involves-container h4 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #3bb4cf;
+}
+
+.discuss-project-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  width: 20rem;
+  /* outline: 1px solid green; */
+}
+.discuss-project-container:hover {
+  opacity: 0.65;
+}
+input[type="checkbox"] {
+  display: grid;
+  place-content: center;
+  appearance: none;
+  width: 10rem;
+  padding: 0.8rem;
+  font-family: "Sansita";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  width: 1.15em;
+  height: 1.15em;
+  margin: 0;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  /* transform: scale(0);
+  transition: 120ms transform ease-in-out; */
+  box-shadow: inset 1em 1em var(--secondary-color);
+  border-radius: 20%;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+  box-shadow: inset 1em 1em #3bb4cf;
+}
+/* input[type="checkbox"] + span {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  width: 12px;
+  height: 12px;
+  margin: -1px 0px 0 0;
+  vertical-align: middle;
+  background: white left top no-repeat;
+  border: 1px solid #ccc;
+}
+input[type="checkbox"]:checked + span {
+  background: #d9534f -19px top no-repeat;
+}
+
+input[type="checkbox"] + span {
+  margin-right: 4px;
+  cursor: pointer;
+} */

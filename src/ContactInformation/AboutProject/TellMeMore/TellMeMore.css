@@ -1,0 +1,23 @@
+.tellMeMore-container p {
+  font-family: "Sansita";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.tellMeMore-container {
+  grid-area: more;
+  position: relative;
+  /* outline: 1px solid blue; */
+  width: 96%;
+  height: 100%;
+}
+.tellMeMore-container input[type="text"] {
+  height: 100px;
+  background: var(--secondary-color);
+  border-radius: 5px;
+}
+.tellMeMore-container * {
+  width: 96%;
+}

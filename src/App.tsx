@@ -8,6 +8,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
+import env from "dotenv";
 //Local Components
 import Header from "./Header/Header";
 import Portfolio from "./Portfolio/Portfolio";
@@ -20,6 +21,7 @@ import HomePage from "./HomePage/HomePage";
 import "./App.css";
 
 const App = () => {
+  env.config();
   return (
     <>
       <Router>

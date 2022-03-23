@@ -1,0 +1,11 @@
+.planning-container {
+  position: relative;
+}
+.project-tittle {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #3bb4cf;
+}
